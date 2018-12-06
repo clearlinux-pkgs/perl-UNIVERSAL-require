@@ -4,7 +4,7 @@
 #
 Name     : perl-UNIVERSAL-require
 Version  : 0.18
-Release  : 6
+Release  : 7
 URL      : https://cpan.metacpan.org/authors/id/N/NE/NEILB/UNIVERSAL-require-0.18.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/N/NE/NEILB/UNIVERSAL-require-0.18.tar.gz
 Summary  : 'require() modules from a variable'
