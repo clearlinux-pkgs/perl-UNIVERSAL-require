@@ -4,12 +4,13 @@
 #
 Name     : perl-UNIVERSAL-require
 Version  : 0.18
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/N/NE/NEILB/UNIVERSAL-require-0.18.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/N/NE/NEILB/UNIVERSAL-require-0.18.tar.gz
 Summary  : 'require() modules from a variable'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-UNIVERSAL-require-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -20,19 +21,30 @@ name is in a variable, something you can't do with the 'require' built-in.
 Summary: dev components for the perl-UNIVERSAL-require package.
 Group: Development
 Provides: perl-UNIVERSAL-require-devel = %{version}-%{release}
+Requires: perl-UNIVERSAL-require = %{version}-%{release}
 
 %description dev
 dev components for the perl-UNIVERSAL-require package.
 
 
+%package perl
+Summary: perl components for the perl-UNIVERSAL-require package.
+Group: Default
+Requires: perl-UNIVERSAL-require = %{version}-%{release}
+
+%description perl
+perl components for the perl-UNIVERSAL-require package.
+
+
 %prep
 %setup -q -n UNIVERSAL-require-0.18
+cd %{_builddir}/UNIVERSAL-require-0.18
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -42,7 +54,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -62,8 +74,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/UNIVERSAL/require.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/UNIVERSAL::require.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/UNIVERSAL/require.pm
