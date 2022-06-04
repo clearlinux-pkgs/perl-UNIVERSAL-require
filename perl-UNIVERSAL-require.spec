@@ -4,7 +4,7 @@
 #
 Name     : perl-UNIVERSAL-require
 Version  : 0.19
-Release  : 20
+Release  : 21
 URL      : https://cpan.metacpan.org/authors/id/N/NE/NEILB/UNIVERSAL-require-0.19.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/N/NE/NEILB/UNIVERSAL-require-0.19.tar.gz
 Summary  : 'require() modules from a variable [deprecated]'
@@ -83,4 +83,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/UNIVERSAL/require.pm
+/usr/lib/perl5/*
