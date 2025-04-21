@@ -7,7 +7,7 @@
 #
 Name     : perl-UNIVERSAL-require
 Version  : 0.19
-Release  : 27
+Release  : 28
 URL      : https://cpan.metacpan.org/authors/id/N/NE/NEILB/UNIVERSAL-require-0.19.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/N/NE/NEILB/UNIVERSAL-require-0.19.tar.gz
 Summary  : 'require() modules from a variable [deprecated]'
